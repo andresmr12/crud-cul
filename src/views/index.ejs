@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%-include('partials/header',{text:"Pagina de Inicio"})%>
+</head>
+
+<body>
+    <div class="container mt-5 p-2 col-lg-9">
+        <div class="row">
+            <div class="card">
+                <div class="d-flex mt-2 position-relative ms-3">
+                    <h2 class="text-center text-info">Registro de producto</h2>
+                    <a href="new-entry" class="btn btn-info mt-2 position-absolute end-0 me-3 ">Agregar Un nuevo
+                        Producto</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-success table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>PRECIO</th>
+                                <th class="text-center">ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <% producto.forEach(function(productos){%>
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        <%=productos.id%>
+                                    </td>
+                                    <td>
+                                        <%=productos.nombre%>
+                                    </td>
+                                    <td>
+                                        <%=productos.precio%>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="/editar/<%=productos.id%>" class="btn btn-primary me-3">Editar</a>
+                                            <a href="/delete/<%=productos.id%>" class="btn btn-danger">Eliminar</a>
+                                            <a href="/verdetalle/<%=productos.id%>" class="btn btn-success ms-3 " >Ver Detalle</a>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                            <%}) %>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Detalles De Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <div class="group-form  text-info">
+                    <label for="" class="form-label d-block"><span class="text-info">ID PRODUCTO:</span> <strong><%=producto[0].id%></strong></label>
+                    <label for="" class="form-label d-block"><span class="text-info">NOMBRE PRODUCTO:</span> <strong><%=producto.nombre%></strong></label>
+                    <label for="" class="form-label d-block"><span class="text-info">PRECIO:</span> <strong> <%=producto.precio%></strong></label>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

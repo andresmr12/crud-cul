@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/header',{text:"Pagina de editar"})%>
+</head>
+<body>
+    <div class="container mt-5 col-sm-5" >
+        <div class="card">
+            <h3 class="text-center mt-3 text-info">Detalle De Producto</h3>
+            <div class="card-body">
+                    <label for="" class="form-label d-block"><span class="text-info">ID PRODUCTO:</span> <strong><%=productos[0].id%></strong></label>
+                    <label for="" class="form-label d-block"><span class="text-info">NOMBRE PRODUCTO:</span> <strong><%=productos[0].nombre%></strong></label>
+                    <label for="" class="form-label d-block"><span class="text-info">PRECIO:</span> <strong> <%=productos[0].precio%></strong></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

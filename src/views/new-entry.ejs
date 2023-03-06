@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/header',{text:'Pagina de Ingresar datos'})%>
+</head>
+<body>
+    <div class="container mt-5 col-sm-8 p-4 ">
+        <div class="card ">
+            <div class="card-body ">
+                <h2>Insertar Registros</h2>
+                <form method="POST" action="/new-entry">
+                    <div class="mb-3">
+                        <label for="" class="form-label">ID</label>
+                        <input type="text" name="id" id="id" class="form-control"  required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">NOMBRE</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">PRECIO</label>
+                        <input type="text" name="precio" id="precio" class="form-control" required>
+                    </div>
+
+                    <div class="d-flex justify-content-center p-2">
+                        <button type="submit" class="btn btn-info me-3">Guardar</button>
+                        <button type="reset" class="btn btn-warning">Limpiar</button>
+                        <a href="/" class="btn btn-secondary  ms-3">Atras</a>
+                        <!-- <button type="submit" class="btn btn-danger ms-3">Eliminar</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
